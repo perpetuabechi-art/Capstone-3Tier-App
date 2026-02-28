@@ -1,0 +1,21 @@
+services:
+  # Tier 1: Frontend
+  frontend-tier:
+    build: ./frontend
+    ports:
+      - "8080:80"
+
+  # Tier 2: Backend
+  backend-tier:
+    build: ./backend
+    ports:
+      - "5000:5000"
+
+  # Tier 3: Database (This fulfills the 3-tier requirement!)
+  database-tier:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: capstone_db
+      
