@@ -12,7 +12,7 @@ services:
       - "5000:5000"
 
   # Tier 3: Database (This fulfills the 3-tier requirement!)
-  database-tier:
+docker   database-tier:
     image: postgres:15-alpine
     environment:
       POSTGRES_USER: admin
